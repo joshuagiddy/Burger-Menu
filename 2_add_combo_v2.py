@@ -1,33 +1,7 @@
+"""Add_combo_v2
+Now we are creating it into a function so that we can use it for the main program as well as display combos
+The function will allow it to calculate the price of the items and the total price of the combo and store the information."""
 import easygui
-
-combos = [
-    ["Value",
-     [
-         ["Beef burger", 2.0],
-         ["Fries", 1.5],
-         ["Fizzy drink", 2.19]
-     ],
-     5.69
-     ],
-    ["Cheezy",
-     [
-         ["Cheeseburger", 3.0],
-         ["Fries", 1.5],
-         ["Fizzy drink", 2.19]
-     ],
-     6.69
-     ],
-    ["Super",
-     [
-         ["Cheeseburger", 3.0],
-         ["Large fries", 2.5],
-         ["Smoothie", 1.19]
-     ],
-     6.69
-     ]
-]
-
-
 def add_combo():
     combo_name = easygui.enterbox("Enter the combo name:")
     items = []
@@ -36,7 +10,7 @@ def add_combo():
         item_name = easygui.enterbox("Enter item name (or leave blank to finish adding items):")
         if not item_name:
             break
-        item_price = float(easygui.enterbox("Enter item price:"))
+        item_price = float(easygui.enterbox("Enter item price (without dollar sign): "))
         items.append([item_name, item_price])
         total_price += item_price
     total_price = round(total_price, 2)
@@ -45,4 +19,5 @@ def add_combo():
     easygui.msgbox(f"Combo {combo_name} added successfully!", "Combo Added")
 
 
-add_combo()
+
+

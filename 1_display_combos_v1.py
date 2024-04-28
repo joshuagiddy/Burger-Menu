@@ -1,3 +1,4 @@
+import easygui
 
 combos = {
     "Value": {
@@ -25,4 +26,14 @@ combos = {
         "total_price": 6.69
     }
 }
-print(combos)
+
+
+user_input = easygui.buttonbox("Select an option?", choices=["Display Menu", "Exit"])
+
+if user_input == "Display Menu":
+   easygui.msgbox(combos)
+elif user_input == "No":
+    easygui.msgbox("Exiting program.")
+else:
+    easygui.msgbox("Invalid input.", "Error")
+user_input

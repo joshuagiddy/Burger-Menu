@@ -1,3 +1,5 @@
+"""Add_combos_v1
+We are now adding a part of the program which will add whatever combo the user wants"""
 import easygui
 
 combos = {
@@ -26,19 +28,17 @@ combos = {
         "total_price": 6.69
     }
 }
-def add_combo():
-    combo_name = easygui.enterbox("Enter the combo name:")
-    items = {}
-    total_price = 0
-    while True:
-        item_name = easygui.enterbox("Enter item name (or leave blank to finish adding items):")
-        if not item_name:
-            break
-        item_price = easygui.enterbox("Enter item price:")
-        items[item_name] = float(item_price)
-        total_price += float(item_price)
-    total_price = round(total_price, 2)
-    combos[combo_name] = {"items": items, "total_price": total_price}
-    easygui.msgbox(f"Combo {combo_name} added successfully!", "Combo Added")
 
-add_combo()
+
+combo_name = easygui.enterbox("Enter the combo name:")
+items = {}
+total_price = 0
+while True:
+    item_name = easygui.enterbox("Enter item name (or leave blank to finish adding items):")
+    if not item_name:
+        break
+    item_price = easygui.enterbox("Enter item price:")
+easygui.msgbox(f"Combo {combo_name} added successfully!", "Combo Added")
+
+
+

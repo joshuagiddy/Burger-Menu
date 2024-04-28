@@ -1,4 +1,5 @@
 import easygui
+
 combos = {
     "Value": {
         "items": {
@@ -25,11 +26,16 @@ combos = {
         "total_price": 6.69
     }
 }
-menu_text = "Menu:\n\n"
-for combo, details in combos.items():
-    item_text = ""
-    for item, price in details["items"].items():
-        item_text += f"{item}: ${price}\n"
-    menu_text += f"{combo}:\n{item_text}Total Price: ${details['total_price']}\n\n"
 
-easygui.msgbox(menu_text, "Combo Meal Menu")
+
+
+
+
+
+combo_name = easygui.enterbox("Enter the combo name to delete:")
+if combo_name in combos:
+    del combos[combo_name]
+    easygui.msgbox(f"Combo {combo_name} deleted successfully!", "Combo Deleted")
+else:
+    easygui.msgbox("Combo not found!", "Error")
+

@@ -1,4 +1,5 @@
 import easygui
+
 combos = {
     "Value": {
         "items": {
@@ -25,6 +26,13 @@ combos = {
         "total_price": 6.69
     }
 }
+
+
+
+
+
+user_input = easygui.buttonbox("Select an option", choices=["Display Menu", "Exit"])
+
 def display_menu():
     menu_text = "Menu:\n\n"
     for combo, details in combos.items():
@@ -34,4 +42,9 @@ def display_menu():
         menu_text += f"{combo}:\n{item_text}Total Price: ${details['total_price']}\n\n"
     easygui.msgbox(menu_text, "Combo Meal Menu")
 
-p
+if user_input == "Display Menu":
+   display_menu()
+elif user_input == "Exit":
+    easygui.msgbox("Exiting program.")
+else:
+    easygui.msgbox("Invalid input.", "Error")
